@@ -12,11 +12,12 @@ import { Row, Col } from "react-bootstrap";
 import { Carousel } from "bootstrap";
 import CarouselLeft from "./CarouselLeft";
 import CarouselRight from "./CarouselRight";
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 const Header = () => {
 
-
+    const navigate = useNavigate();
     let date = new Date();
     let num = date.getDate();
     let days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
@@ -179,13 +180,16 @@ const Header = () => {
                 <span style={{ 'marginLeft': '20px', 'paddingTop': '7px' }}><YouTubeIcon /></span>
             </div>
             <div className="second-nav">
+                
                 <img style={
                     {
                         'objectFit': 'cover',
                         'height': '86px',
-                        'filter': 'inherit'
+                        'filter': 'inherit',
+                        'cursor':'pointer'
                     }
                 }
+                  onClick={()=>{navigate("home"); console.log("Hi")}}
                     src="https://static.toiimg.com/photo/79638690.cms" alt="new" />
                     {/* <Link to='/'>Header</Link> */}
             </div>
@@ -304,6 +308,10 @@ const Header = () => {
                     'marginLeft': '20px',
 
                 }}><SearchIcon /></span>
+                <span style={{
+                    'marginLeft': '20px',
+
+                }}><MenuIcon/> </span>
             </div>
             <div className="news"
                 style={
